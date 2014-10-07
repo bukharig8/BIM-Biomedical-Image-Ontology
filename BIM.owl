@@ -1,0 +1,889 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY bibo "http://purl.org/ontology/bibo/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY BIM "http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#" >
+    <!ENTITY base "http://rdf.myexperiment.org/ontologies/base/" >
+    <!ENTITY basic "http://prismstandard.org/namespaces/1.2/basic/" >
+]>
+
+
+<rdf:RDF xmlns="http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#"
+     xml:base="http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:basic="http://prismstandard.org/namespaces/1.2/basic/"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:BIM="http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:base="http://rdf.myexperiment.org/ontologies/base/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://purl.org/ontology/bibo/"/>
+        <owl:imports rdf:resource="http://rdf.myexperiment.org/ontologies/base/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hasImageOCR -->
+
+    <owl:ObjectProperty rdf:about="#hasImageOCR"/>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hasSequenceType -->
+
+    <owl:ObjectProperty rdf:about="#hasSequenceType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#abstract -->
+
+    <owl:DatatypeProperty rdf:about="#abstract">
+        <rdfs:comment rdf:datatype="&xsd;long"
+            >Abstract of scientific artcile</rdfs:comment>
+        <rdfs:domain rdf:resource="#ScientificDocument"/>
+        <owl:equivalentProperty rdf:resource="&bibo;abstract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#caption -->
+
+    <owl:DatatypeProperty rdf:about="#caption">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Caption of a figure</rdfs:comment>
+        <rdfs:domain rdf:resource="#Image"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#doi -->
+
+    <owl:DatatypeProperty rdf:about="#doi">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Document Identification of a scientific docuemnt</rdfs:comment>
+        <rdfs:domain rdf:resource="#ScientificDocument"/>
+        <owl:equivalentProperty rdf:resource="&basic;doi"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#filename -->
+
+    <owl:DatatypeProperty rdf:about="#filename">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >PubMed Image file name, example  1471-2164-3-4-1</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="&base;filename"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#fulltext -->
+
+    <owl:DatatypeProperty rdf:about="#fulltext">
+        <rdfs:comment rdf:datatype="&xsd;long"
+            >Full text of a pubmed Article</rdfs:comment>
+        <owl:equivalentProperty rdf:resource="&base;text"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanBitscore -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanBitscore">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A bit score in HMMER is the log of the ratio of the sequence&#39;s probability according to the profile (the homology hypothesis) to the null model probability (the non-homology hypothesis).</rdfs:comment>
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanCevalue -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanCevalue">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanDescription -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanDescription">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanFamily_Accession -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanFamily_Accession">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanFamily_Id -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanFamily_Id">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanID -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanID">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanIevalue -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanIevalue">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanclan -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanclan">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanseqEND -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanseqEND">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#hmmScanseqStart -->
+
+    <owl:DatatypeProperty rdf:about="#hmmScanseqStart">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#imagId -->
+
+    <owl:DatatypeProperty rdf:about="#imagId">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Every Image embeded inside a scientific publication has a unique id and could be retrived from PubMed based on that. Example PMC100357/1471-2164-3-4-1</rdfs:comment>
+        <rdfs:domain rdf:resource="#Image"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#imageLabel -->
+
+    <owl:DatatypeProperty rdf:about="#imageLabel">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Image Number/Label of an image inside a scientific publication. Like Figure 1</rdfs:comment>
+        <rdfs:domain rdf:resource="#Image"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#imageOCR -->
+
+    <owl:DatatypeProperty rdf:about="#imageOCR">
+        <rdfs:domain rdf:resource="#Image"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#imageType -->
+
+    <owl:DatatypeProperty rdf:about="#imageType">
+        <rdfs:domain rdf:resource="#Image"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#pHmmerScanDescription -->
+
+    <owl:DatatypeProperty rdf:about="#pHmmerScanDescription">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#pHmmerScanKingdom -->
+
+    <owl:DatatypeProperty rdf:about="#pHmmerScanKingdom">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#pHmmerScanSpecies -->
+
+    <owl:DatatypeProperty rdf:about="#pHmmerScanSpecies">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#pHmmerScanTarget -->
+
+    <owl:DatatypeProperty rdf:about="#pHmmerScanTarget">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#pHmmerScanbitscore -->
+
+    <owl:DatatypeProperty rdf:about="#pHmmerScanbitscore">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#pHmmerScanid -->
+
+    <owl:DatatypeProperty rdf:about="#pHmmerScanid">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#pHmmerScanvalue -->
+
+    <owl:DatatypeProperty rdf:about="#pHmmerScanvalue">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#pmcid -->
+
+    <owl:DatatypeProperty rdf:about="#pmcid">
+        <rdfs:comment rdf:datatype="&xsd;integer"
+            >PubMed Central Identifier of a scientific docuemnt.</rdfs:comment>
+        <rdfs:domain rdf:resource="#ScientificDocument"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#pmid -->
+
+    <owl:DatatypeProperty rdf:about="#pmid">
+        <rdfs:comment rdf:datatype="&xsd;integer"
+            >PubMed Identifier of a scientific docuemnt</rdfs:comment>
+        <rdfs:domain rdf:resource="#ScientificDocument"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#prosite_id -->
+
+    <owl:DatatypeProperty rdf:about="#prosite_id">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#prosite_level -->
+
+    <owl:DatatypeProperty rdf:about="#prosite_level">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#prosite_score -->
+
+    <owl:DatatypeProperty rdf:about="#prosite_score">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#prosite_sequence_acsession -->
+
+    <owl:DatatypeProperty rdf:about="#prosite_sequence_acsession">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#prosite_signature_ac -->
+
+    <owl:DatatypeProperty rdf:about="#prosite_signature_ac">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#prosite_start -->
+
+    <owl:DatatypeProperty rdf:about="#prosite_start">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#prosite_stop -->
+
+    <owl:DatatypeProperty rdf:about="#prosite_stop">
+        <rdfs:domain rdf:resource="#SequenceImage"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#title -->
+
+    <owl:DatatypeProperty rdf:about="#title">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Title of an image,</rdfs:comment>
+        <rdfs:domain rdf:resource="#Image"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://prismstandard.org/namespaces/1.2/basic/doi -->
+
+    <owl:DatatypeProperty rdf:about="&basic;doi">
+        <rdfs:domain rdf:resource="#ScientificDocument"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/abstract -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;abstract">
+        <rdfs:domain rdf:resource="#ScientificDocument"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdf.myexperiment.org/ontologies/base/filename -->
+
+    <owl:DatatypeProperty rdf:about="&base;filename">
+        <rdfs:domain rdf:resource="#Image"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdf.myexperiment.org/ontologies/base/text -->
+
+    <owl:DatatypeProperty rdf:about="&base;text">
+        <rdfs:domain rdf:resource="#ScientificDocument"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#BiomedicalImage -->
+
+    <owl:Class rdf:about="#BiomedicalImage">
+        <rdfs:subClassOf rdf:resource="#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Calcium_imaging -->
+
+    <owl:Class rdf:about="#Calcium_imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >Calcium imaging is a scientific technique usually carried out in research which is designed to show the calcium (Ca2+) status of a cell, tissue or medium.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Charts -->
+
+    <owl:Class rdf:about="#Charts">
+        <rdfs:subClassOf rdf:resource="#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Computed_Tomography -->
+
+    <owl:Class rdf:about="#Computed_Tomography">
+        <rdfs:subClassOf rdf:resource="#Tomography"/>
+        <rdfs:comment
+            >Computed Tomography (CT), or Computed Axial Tomography (CAT: A CT scan, also known as a CAT scan), is a helical tomography (latest generation), which traditionally produces a 2D image of the structures in a thin section of the body.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#DNA_Sequence -->
+
+    <owl:Class rdf:about="#DNA_Sequence">
+        <rdfs:subClassOf rdf:resource="#SequenceImage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Diffuse_optical_imaging -->
+
+    <owl:Class rdf:about="#Diffuse_optical_imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >Diffuse optical imaging (DOI) is a method of imaging using Near Infrared Spectroscopic (NIRS) [1] or Fluorescence based methods.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Diffusion-weighted_imaging -->
+
+    <owl:Class rdf:about="#Diffusion-weighted_imaging">
+        <rdfs:subClassOf rdf:resource="#Magnetic_Resonance_Imaging"/>
+        <rdfs:comment
+            >a type of MRI that uses water diffusion</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Echocardiography -->
+
+    <owl:Class rdf:about="#Echocardiography">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >Echocardiography allows detailed structures of the heart, including chamber size, heart function, the valves of the heart, as well as the pericardium (the sac around the heart) to be seen.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Elastography -->
+
+    <owl:Class rdf:about="#Elastography">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >Elastography is a new imaging modality that maps the elastic properties of soft tissue. This modality emerged in the last decade. Elastography can use ultrasound, magnetic resonance imaging and tactile imaging.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Fluorescence_lifetime_imaging -->
+
+    <owl:Class rdf:about="#Fluorescence_lifetime_imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >using the decay rate of a fluorescent sample</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Fluoroscopy -->
+
+    <owl:Class rdf:about="#Fluoroscopy">
+        <rdfs:subClassOf rdf:resource="#Radiography"/>
+        <rdfs:comment
+            >Fluoroscopy produces real-time images of internal structures of the body in a similar fashion to radiography, but employs a constant input of x-rays, at a lower dose rate</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Functional_near-infrared_spectroscopy -->
+
+    <owl:Class rdf:about="#Functional_near-infrared_spectroscopy">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >FNIR Is a relatively new non-invasive imaging technique. NIRS (near infrared spectroscopy) is used for the purpose of functional neuroimaging and has been widely accepted as a brain imaging technique</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Gallium_imaging -->
+
+    <owl:Class rdf:about="#Gallium_imaging">
+        <rdfs:subClassOf rdf:resource="#Nuclear_Imaging"/>
+        <rdfs:comment
+            >a nuclear medicine method for the detection of infections and cancers</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Graph -->
+
+    <owl:Class rdf:about="#Graph">
+        <rdfs:subClassOf rdf:resource="#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#HmmerSearch -->
+
+    <owl:Class rdf:about="#HmmerSearch">
+        <rdfs:subClassOf rdf:resource="#SequenceAnalysisTools"/>
+        <rdfs:comment
+            > used to search one or more profiles against a protein sequence database. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Hmmscan -->
+
+    <owl:Class rdf:about="#Hmmscan">
+        <rdfs:subClassOf rdf:resource="#SequenceAnalysisTools"/>
+        <rdfs:comment
+            >search protein sequences against collections of profiles, e.g. Pfam. In HMMER2 this was called hmmpfam.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Image -->
+
+    <owl:Class rdf:about="#Image"/>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Imaging_agent -->
+
+    <owl:Class rdf:about="#Imaging_agent">
+        <rdfs:comment
+            >a chemical designed to allow clinicians to determine whether a mass is benign or malignant</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#JackHmmer -->
+
+    <owl:Class rdf:about="#JackHmmer">
+        <rdfs:subClassOf rdf:resource="#SequenceAnalysisTools"/>
+        <rdfs:comment
+            >iteratively search a query protein sequence, multiple sequence alignment or profile HMM against the target protein sequence database.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Linear_tomography -->
+
+    <owl:Class rdf:about="#Linear_tomography">
+        <rdfs:subClassOf rdf:resource="#Tomography"/>
+        <rdfs:comment
+            >This is the most basic form of tomography. The X-ray tube moved from point &quot;A&quot; to point &quot;B&quot; above the patient, while the cassette holder (or &quot;bucky&quot;) moves simultaneously under the patient from point &quot;B&quot; to point &quot;A.&quot; </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Magnetic_Resonance_Imaging -->
+
+    <owl:Class rdf:about="#Magnetic_Resonance_Imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >A magnetic resonance imaging instrument (MRI scanner), or &quot;nuclear magnetic resonance (NMR) imaging&quot; scanner as it was originally known, uses powerful magnets to polarise and excite hydrogen nuclei (single proton) in water molecules in human tissue, producing a detectable signal which is spatially encoded, resulting in images of the body.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Microscopy -->
+
+    <owl:Class rdf:about="#Microscopy">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >creating images of objects or features too small to be detectable by the naked human eye</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Molecular_imaging -->
+
+    <owl:Class rdf:about="#Molecular_imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >used to study molecular pathways inside organisms</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Nuclear_Imaging -->
+
+    <owl:Class rdf:about="#Nuclear_Imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Optical_imaging -->
+
+    <owl:Class rdf:about="#Optical_imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >a technique to allow cognitive neuroscientists to &quot;see&quot; brain activity</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Optoacoustic_imaging -->
+
+    <owl:Class rdf:about="#Optoacoustic_imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >using the photothermal effect, for the accuracy of spectroscopy with the depth resolution of ultrasound</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Phmmer -->
+
+    <owl:Class rdf:about="#Phmmer">
+        <rdfs:subClassOf rdf:resource="#SequenceAnalysisTools"/>
+        <rdfs:comment
+            >used to search one or more query protein sequences against a protein sequence database.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Photoacoustic_imaging -->
+
+    <owl:Class rdf:about="#Photoacoustic_imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >Photoacoustic imaging is a recently developed hybrid biomedical imaging modality based on the photoacoustic effect. It combines the advantages of optical absorption contrast with ultrasonic spatial resolution for deep imaging in (optical) diffusive or quasi-diffusive regime.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Poly_tomography -->
+
+    <owl:Class rdf:about="#Poly_tomography">
+        <rdfs:subClassOf rdf:resource="#Tomography"/>
+        <rdfs:comment
+            >This was a complex form of tomography. With this technique, a number of geometrical movements were programmed, such as hypocycloidic, circular, figure 8, and elliptical.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Positron_Emission_Tomography -->
+
+    <owl:Class rdf:about="#Positron_Emission_Tomography">
+        <rdfs:subClassOf rdf:resource="#Tomography"/>
+        <rdfs:comment
+            >Positron emission tomography also used in conjunction with computed tomography, PET-CT, and magnetic resonance imaging PET-MRI.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Positron_Tmission_Tomography -->
+
+    <owl:Class rdf:about="#Positron_Tmission_Tomography">
+        <rdfs:subClassOf rdf:resource="#Nuclear_Imaging"/>
+        <rdfs:comment
+            >Positron emission tomography (PET) uses coincidence detection to image functional processes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Projectional_radiographs -->
+
+    <owl:Class rdf:about="#Projectional_radiographs">
+        <rdfs:subClassOf rdf:resource="#Radiography"/>
+        <rdfs:comment
+            >Projectional radiographs, more commonly known as x-rays, are often used to determine the type and extent of a fracture as well as for detecting pathological changes in the lungs</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Protein_Sequence -->
+
+    <owl:Class rdf:about="#Protein_Sequence">
+        <rdfs:subClassOf rdf:resource="#SequenceImage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Radiography -->
+
+    <owl:Class rdf:about="#Radiography">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#SPECT -->
+
+    <owl:Class rdf:about="#SPECT">
+        <rdfs:subClassOf rdf:resource="#Nuclear_Imaging"/>
+        <rdfs:comment
+            >SPECT is a 3D tomographic technique that uses gamma camera data from many projections and can be reconstructed in different planes. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#ScientificDocument -->
+
+    <owl:Class rdf:about="#ScientificDocument"/>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Scintigraphy -->
+
+    <owl:Class rdf:about="#Scintigraphy">
+        <rdfs:subClassOf rdf:resource="#Nuclear_Imaging"/>
+        <rdfs:comment
+            >Scintigraphy (&quot;scint&quot;) is a form of diagnostic test wherein radioisotopes are taken internally, for example intravenously or orally.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#SequenceAnalysisTools -->
+
+    <owl:Class rdf:about="#SequenceAnalysisTools"/>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#SequenceImage -->
+
+    <owl:Class rdf:about="#SequenceImage">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#SequenceImageOCR -->
+
+    <owl:Class rdf:about="#SequenceImageOCR"/>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Tactile_imaging -->
+
+    <owl:Class rdf:about="#Tactile_imaging">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >Tactile imaging is a medical imaging modality that translates the sense of touch into a digital image. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Thermography -->
+
+    <owl:Class rdf:about="#Thermography">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >Basically used for the breast imaging. There are three approaches: the tele-thermography, the contact thermography and the dynamic angiothermography. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Tomography -->
+
+    <owl:Class rdf:about="#Tomography">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >Tomography is the method of imaging a single plane, or slice, of an object resulting in a tomogram. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Ultrasound -->
+
+    <owl:Class rdf:about="#Ultrasound">
+        <rdfs:subClassOf rdf:resource="#BiomedicalImage"/>
+        <rdfs:comment
+            >Medical ultrasonography uses high frequency broadband sound waves in the megahertz range that are reflected by tissue to varying degrees to produce (up to 3D) images. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#X-ray_computed_tomography -->
+
+    <owl:Class rdf:about="#X-ray_computed_tomography">
+        <rdfs:subClassOf rdf:resource="#Tomography"/>
+        <rdfs:comment
+            >X-ray computed tomography (x-ray CT) is a technology that uses computer-processed x-rays to produce tomographic images (virtual &#39;slices&#39;) of specific areas of the scanned object, allowing the user to see inside without cutting.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://cbakerlab.unbsj.ca:8080/sebi/BIM.owl#Zonography -->
+
+    <owl:Class rdf:about="#Zonography">
+        <rdfs:subClassOf rdf:resource="#Tomography"/>
+        <rdfs:comment
+            >This is a variant of linear tomography, where a limited arc of movement is used. It is still used in some centres for visualising the kidney during an intravenous urogram (IVU).</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
